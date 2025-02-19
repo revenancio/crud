@@ -1,6 +1,6 @@
-from  Modelo import item
-from Modelo import items
-class controlador :
+from Modelo.Modelo import LolItem
+from Modelo.Modelo import items
+class Controlador :
 
 #definimos la funcion initque  almacenara los objetos items en una lista
     def __init__(self):
@@ -8,8 +8,8 @@ class controlador :
 
 #creamos funcion agregar ojetos para poder agregar objetos a la lista usando  
 #append para agregar el objeto al final de la lista
-    def agregar_objeto(self, id, nombre, precio, tipo, penetacion=0, dano_magico=0, danocritico=0):
-        nuevo_objeto = item(id, nombre, precio, tipo, penetacion, dano_magico, danocritico)
+    def agregar_objeto(self, id, nombre, precio, tipo, penetracion=0, danomagico=0, danocritico=0):
+        nuevo_objeto = LolItem(id, nombre, precio, tipo, penetracion, danomagico, danocritico)
         self.items.append(nuevo_objeto)
         print(f"Objeto{nombre} agregado exxitosamente.")
 
@@ -22,7 +22,7 @@ class controlador :
         else:
             for item in self.items:
                 print(f"ID: {item.id}, Nombre: {item.nombre}, Precio: {item.precio}, Tipo: {item.tipo}, "
-                      f"Penetración: {item.penetracion}, Daño Mágico: {item.dano_magico}, Daño Crítico: {item.dano_critico}")
+                      f"Penetración: {item.penetracion}, Daño Mágico: {item.danomagico}, Daño Crítico: {item.danocritico}")
 
 #creamos la funcion actualizar objeto para poder modificar un objeto en la lista
 #usamos un for para recorrer la lista y un if para comparar el id del objeto
@@ -32,8 +32,8 @@ class controlador :
             if item.id == id:
                 item.precio = nuevo_precio
                 item.penetracion = nueva_penetracion
-                item.dano_magico = nuevo_dano_magico
-                item.dano_critico = nuevo_dano_critico
+                item.danomagico = nuevo_dano_magico
+                item.danocritico = nuevo_dano_critico
                 print(f"Objeto {item.nombre} actualizado exitosamente.")
                 return
         print("Objeto no encontrado.")
