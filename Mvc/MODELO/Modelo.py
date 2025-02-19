@@ -1,7 +1,8 @@
+#creamos el molde de los objetos que se van a crear
 class LolItem: 
-    def _init__(self, id, nombre, precio, tipo, penetacion=0, dano_magico=0, danocritico=0):
+    def __init__(self, id, nombre, precio, tipo, penetacion=0, dano_magico=0, danocritico=0):
         self.id = id
-        self.nombbre = nombre
+        self.nombre = nombre
         self.precio = precio
         self.tipo = tipo
         self.penetacion = penetacion
@@ -11,6 +12,9 @@ class LolItem:
 #simulacion de base de datos 
 items = [] #lista donde se almacenan los nuevos objetos creados
 
+#creamos las funciones del crud 
+#CRUD
+#Create - Read - Update - Delete
 def create_item(id, nombre, precio, tipo, penetacion=0, dano_magico=0, danocritico=0):
     item = LolItem(id, nombre, precio, tipo, penetacion, dano_magico, danocritico)
     items.append(item)
